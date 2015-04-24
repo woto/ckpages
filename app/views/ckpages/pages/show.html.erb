@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @page.path %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @page.content %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @page.keywords %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @page.description %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @page.title %>
+</p>
+
+<p>
+  <strong>Robots:</strong>
+  <%= @page.robots %>
+</p>
+
+<p>
+  <strong>Redirect url:</strong>
+  <%= @page.redirect_url %>
+</p>
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  path: MyText
+  content: MyText
+  keywords: MyText
+  description: MyText
+  title: MyText
+  robots: MyText
+  redirect_url: MyText
+
+two:
+  path: MyText
+  content: MyText
+  keywords: MyText
+  description: MyText
+  title: MyText
+  robots: MyText
+  redirect_url: MyText
