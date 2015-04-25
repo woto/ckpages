@@ -1,12 +1,3 @@
-jQuery.cachedScript = function( url, options ) {
-  options = $.extend( options || {}, {
-    dataType: "script",
-    cache: true,
-    url: url
-  });
-  return jQuery.ajax( options );
-};
-
 var ckeditor_init = function() {
   CKEDITOR.replace('page_content', {
     extraPlugins: 'uploadimage,image2',
@@ -14,10 +5,8 @@ var ckeditor_init = function() {
   });
 }
 
-var nonIdempotentFunction = function() {
-  jQuery.cachedScript("/ckeditor/ckeditor.js" ).done(function( script, textStatus ) {
-    ckeditor_init();
-  });
+var ckeditor_load = function() {
+  ckeditor_init();
 };
 
-$(document).on("ready page:load", nonIdempotentFunction);
+$(document).on("ready page:load", ckeditor_load);
