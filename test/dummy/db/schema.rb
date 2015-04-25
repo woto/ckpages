@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150424201308) do
+ActiveRecord::Schema.define(version: 20150425152740) do
 
   create_table "ckpages_pages", force: :cascade do |t|
     t.text     "path"
@@ -23,6 +23,23 @@ ActiveRecord::Schema.define(version: 20150424201308) do
     t.text     "redirect_url"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.text     "breadcrumb"
+    t.text     "title1"
+    t.text     "url1"
+    t.text     "title2"
+    t.text     "url2"
+    t.text     "title3"
+    t.text     "url3"
+    t.text     "title4"
+    t.text     "url4"
+    t.text     "title5"
+    t.text     "url5"
+  end
+
+  create_table "ckpages_uploads", force: :cascade do |t|
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

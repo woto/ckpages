@@ -5,8 +5,6 @@ module Ckpages
     validates :path, presence: true, uniqueness: {case_sensitive: false}
     validates :redirect_url, format: { with: /\A\/|http:\/\/|https:\/\// }, allow_nil: true, allow_blank: true
 
-    #has_and_belongs_to_many :uploads
-
     def normalize
       return false unless self.errors.empty?
 

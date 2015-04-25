@@ -16,6 +16,10 @@ module Ckpages
     # GET /pages/new
     def new
       @page = Page.new
+
+      if params[:path].present?
+        @resource.path = CGI::unescape(params[:path])
+      end
     end
 
     # GET /pages/1/edit
@@ -56,7 +60,7 @@ module Ckpages
 
       # Only allow a trusted parameter "white list" through.
       def page_params
-        params.require(:page).permit(:path, :content, :keywords, :description, :title, :robots, :redirect_url)
+        params.require(:page).permit(:path, :content, :keywords, :description, :title, :robots, :redirect_url, :title1, :url1, :title2, :url2, :title3, :url3, :title4, :url4, :title5, :url5)
       end
   end
 end

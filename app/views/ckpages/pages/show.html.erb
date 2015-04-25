@@ -1,3 +1,7 @@
+<div class="page-header">
+  <h1>Закрытый просмотр</h1>
+</div>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -35,5 +39,56 @@
   <%= @page.redirect_url %>
 </p>
 
-<%= link_to 'Edit', edit_page_path(@page), class: 'btn btn-default' %>
-<%= link_to 'Back', pages_path, class: 'btn btn-default' %>
+<p>
+  <strong>Title1:</strong>
+  <%= @page.title1 %>
+</p>
+
+<p>
+  <strong>Url1:</strong>
+  <%= @page.url1 %>
+</p>
+
+<p>
+  <strong>Title2:</strong>
+  <%= @page.title2 %>
+</p>
+
+<p>
+  <strong>Url2:</strong>
+  <%= @page.url2 %>
+</p>
+
+<p>
+  <strong>Title3:</strong>
+  <%= @page.title3 %>
+</p>
+
+<p>
+  <strong>Url3:</strong>
+  <%= @page.url3 %>
+</p>
+
+<p>
+  <strong>Title4:</strong>
+  <%= @page.title4 %>
+</p>
+
+<p>
+  <strong>Url4:</strong>
+  <%= @page.url4 %>
+</p>
+
+<p>
+  <strong>Title5:</strong>
+  <%= @page.title5 %>
+</p>
+
+<p>
+  <strong>Url5:</strong>
+  <%= @page.url5 %>
+</p>
+
+<%= link_to 'Публичный просмотр', '/' + @page.path, class: 'btn btn-primary btn-lg', target: "_blank" %>
+<%= link_to 'Редактировать', edit_page_path(@page), class: 'btn btn-primary btn-lg' %>
+<%= link_to 'К списку страниц', pages_path, class: 'btn btn-default btn-lg' %>

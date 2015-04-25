@@ -1,7 +1,10 @@
+<% url_helper = Rails.application.routes.url_helpers %>
+
 var ckeditor_init = function() {
   CKEDITOR.replace('page_content', {
-    extraPlugins: 'uploadimage,image2',
-    uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json'
+    extraPlugins: 'uploadimage,image2,embed',
+    uploadUrl: ckpages_uploads_path,
+    height: '400'
   });
 }
 

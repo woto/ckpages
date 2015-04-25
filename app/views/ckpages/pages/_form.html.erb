@@ -1,17 +1,21 @@
-<%= simple_form_for(@page, html: {class: 'form-horizontal', style: 'margin-bottom: 10px;' }) do |f| %>
+<%= simple_form_for(@page, html: {class: 'form-horizontal'}) do |f| %>
+
   <%= f.error_notification %>
 
-  <% if @page.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+  <%= f.input :title1, as: :string %>
+  <%= f.input :url1, as: :string %>
 
-      <ul>
-      <% @page.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.input :title2, as: :string %>
+  <%= f.input :url2, as: :string %>
+
+  <%= f.input :title3, as: :string %>
+  <%= f.input :url3, as: :string %>
+
+  <%= f.input :title4, as: :string %>
+  <%= f.input :url4, as: :string %>
+
+  <%= f.input :title5, as: :string %>
+  <%= f.input :url5, as: :string %>
 
   <%= f.input :path, as: :string %>
   <%= f.input :keywords, as: :string %>
@@ -21,6 +25,9 @@
   <%= f.input :redirect_url, as: :string %>
   <%= f.input :content %>
 
-  <%= f.button :submit %>
+  <%= f.button :submit, class: 'btn btn-danger btn-lg' %>
+  <%= link_to 'Закрытый просмотр', @page, class: 'btn btn-primary btn-lg' if @page.persisted? %>
+  <%= link_to 'Публичный просмотр', '/' + @page.path, class: 'btn btn-primary btn-lg' if @page.persisted? %>
+  <%= link_to 'К списку страниц', pages_path, class: 'btn btn-default btn-lg' %>
 
 <% end %>

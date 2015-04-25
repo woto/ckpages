@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency "jquery-rails"
   s.add_dependency "turbolinks"
   s.add_dependency "simple_form"
+  s.add_dependency "carrierwave"
 
   s.add_development_dependency "sqlite3"
 end
