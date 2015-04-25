@@ -2,8 +2,33 @@ require 'test_helper'
 
 module Ckpages
   class PageTest < ActiveSupport::TestCase
-    # test "the truth" do
-    #   assert true
-    # end
+    # Мы не отлавливаем и не проверяем изощрённые методы типа '//  // 123 //  //'
+
+    test 'При указании path "//123" мы должны получить 123' do
+      p = Page.create path: '//123'
+      assert_equal '123', p.path
+    end
+
+    test 'При указании path "123/" мы должны получить 123' do
+      p = Page.create path: '123/'
+      assert_equal '123', p.path
+    end
+
+    test 'При указании path "123//" мы должны получить 123' do
+      p = Page.create path: '123//'
+      assert_equal '123', p.path
+    end
+
+    test 'При указании path "/123" мы должны получить 123' do
+      p = Page.create path: '/123'
+      assert_equal '123', p.path
+    end
+
+    test 'При указании path " 123 " мы должны получить 123' do
+      p = Page.create path: ' 123 '
+      assert_equal '123', p.path
+    end
   end
 end
+
+

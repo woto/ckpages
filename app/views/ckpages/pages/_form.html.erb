@@ -1,4 +1,6 @@
-<%= form_for(@page) do |f| %>
+<%= simple_form_for(@page, html: {class: 'form-horizontal', style: 'margin-bottom: 10px;' }) do |f| %>
+  <%= f.error_notification %>
+
   <% if @page.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
@@ -11,35 +13,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :path %><br>
-    <%= f.text_area :path %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :keywords %><br>
-    <%= f.text_area :keywords %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_area :title %>
-  </div>
-  <div class="field">
-    <%= f.label :robots %><br>
-    <%= f.text_area :robots %>
-  </div>
-  <div class="field">
-    <%= f.label :redirect_url %><br>
-    <%= f.text_area :redirect_url %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.input :path, as: :string %>
+  <%= f.input :keywords, as: :string %>
+  <%= f.input :description, as: :string %>
+  <%= f.input :title, as: :string %>
+  <%= f.input :robots, as: :string %>
+  <%= f.input :redirect_url, as: :string %>
+  <%= f.input :content %>
+
+  <%= f.button :submit %>
+
 <% end %>
