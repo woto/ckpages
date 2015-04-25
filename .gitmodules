@@ -1,0 +1,3 @@
+[submodule "vendor/assets/ckeditor"]
+	path = vendor/assets/ckeditor
+	url = https://github.com/ckeditor/ckeditor-dev
