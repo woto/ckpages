@@ -5,4 +5,5 @@ require "bootstrap-sass"
 require "simple_form"
 
 module Ckpages
+  mattr_accessor :suppress_exceptions
 end

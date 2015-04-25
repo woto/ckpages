@@ -8,13 +8,11 @@ class Constraint
 end
 
 Rails.application.routes.draw do
-  resources :uploads
-  get "*path", controller: 'ckpages/public', action: :show, :constraints => Constraint.new, format: false
+  get "*path", controller: 'ckpages/public', action: :show, constraints: Constraint.new, format: false
 
-  ## TODO Доработать.
-  #if Rails.application.config_for('application/common')['suppress_exceptions']
-  #  get "*error", :to => "application#render_404", format: false
-  #end
+  if Ckpages.suppress_exceptions
+    get "*error", :to => "ckpages/public404", action: :show, format: false
+  end
 
 end
 

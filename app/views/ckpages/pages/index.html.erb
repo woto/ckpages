@@ -4,7 +4,7 @@
   <h1>Список страниц</h1>
 </div>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Path</th>
@@ -23,7 +23,8 @@
     <% @pages.each do |page| %>
       <tr>
         <td><%= page.path %></td>
-        <td><%= page.content %></td>
+        <%# TODO После задействования ransack %>
+        <td><%= excerpt page.content, '', radius: 100 %></td>
         <td><%= page.keywords %></td>
         <td><%= page.description %></td>
         <td><%= page.title %></td>
@@ -37,10 +38,10 @@
           <%= page.title5 %> <%= page.url5 %>
         </td>
         <td class="text-center">
-          <%= link_to 'Закрытый просмотр', page, class: 'btn btn-xs btn-primary bottom-space-xs' %><br>
-          <%= link_to 'Публичный просмотр', '/' + page.path, class: 'btn btn-xs btn-primary bottom-space-xs', target: "_blank" %><br>
-          <%= link_to 'Редактировать', edit_page_path(page), class: 'btn btn-xs btn-primary bottom-space-xs' %><br>
-          <%= link_to 'Удалить страницу', page, method: :delete, data: { confirm: 'Уверены?' }, class: 'btn btn-xs btn-danger' %>
+          <%= link_to 'Закрытый просм.', page, class: 'btn btn-xs bottom-space-xs' %><br>
+          <%= link_to 'Публичный просм.', '/' + page.path, class: 'btn btn-xs bottom-space-xs', target: "_blank" %><br>
+          <%= link_to 'Редактировать', edit_page_path(page), class: 'btn btn-xs bottom-space-xs' %><br>
+          <%= link_to 'Удалить', page, method: :delete, data: { confirm: 'Уверены?' }, class: 'btn btn-danger btn-xs' %>
         </td>
       </tr>
     <% end %>
@@ -49,4 +50,4 @@
 
 <br>
 
-<%= link_to 'Создать страницу', new_page_path, class: 'btn btn-primary btn-lg' %>
+<%= link_to 'Новая страница', new_page_path, class: 'btn btn-primary btn-lg' %>

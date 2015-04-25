@@ -18,7 +18,7 @@ module Ckpages
       @page = Page.new
 
       if params[:path].present?
-        @resource.path = CGI::unescape(params[:path])
+        @page.path = CGI::unescape(params[:path])
       end
     end
 
