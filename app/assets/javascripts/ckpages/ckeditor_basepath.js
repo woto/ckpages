@@ -1,1 +1,1 @@
-window.CKEDITOR_BASEPATH = '/assets/';
+window.CKEDITOR_BASEPATH = '/ckeditor/';

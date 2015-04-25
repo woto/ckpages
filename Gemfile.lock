@@ -55,8 +55,6 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
-    byebug (4.0.5)
-      columnize (= 0.9.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -64,7 +62,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
-    columnize (0.9.0)
     erubis (2.7.0)
     execjs (2.5.2)
     globalid (0.3.5)
@@ -137,12 +134,14 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (2.7.1)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
   ckpages!
-  simple_form
   sqlite3
+  uglifier
