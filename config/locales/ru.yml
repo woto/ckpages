@@ -1,5 +1,7 @@
 ru:
   activerecord:
+    models:
+        ckpages/page: Страница
     attributes:
       ckpages/page:
         description: Описание SEO
