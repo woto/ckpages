@@ -31,7 +31,7 @@ $(document).on "page:change", ->
 
     # Если у текущей группы заполнено значение, или значение имеется 
     # у предыдущей группы, то отображаем обрабатываемую группу
-    if (title_id.val() && url_id.val()) || (previous_title_id.val() && previous_url_id.val())
+    if (title_id.val() && url_id.val()) || (previous_title_id.val() && previous_url_id.val()) || n == 1
       title_class.show()
       url_class.show()
     else

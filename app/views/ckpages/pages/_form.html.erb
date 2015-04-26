@@ -27,8 +27,8 @@
   <%= f.input :content %>
 
   <%= f.button :submit, class: 'btn btn-danger btn-lg' %>
-  <%= link_to 'Закрытый просмотр', @page, class: 'btn btn-primary btn-lg' if @page.persisted? %>
-  <%= link_to 'Публичный просмотр', '/' + @page.path, class: 'btn btn-primary btn-lg' if @page.persisted? %>
-  <%= link_to 'К списку страниц', pages_path, class: 'btn btn-default btn-lg' %>
+  <%= link_to 'Закрытый просмотр', @page, class: 'btn btn-primary btn-lg', data: { confirm: 'Не сохраненные данные будут утеряны. Действительно перейти?' } if @page.persisted? %>
+  <%= link_to 'Публичный просмотр', '/' + @page.path, class: 'btn btn-primary btn-lg', target: "_blank" if @page.persisted? %>
+  <%= link_to 'К списку страниц', pages_path, class: 'btn btn-default btn-lg', data: { confirm: 'Не сохраненные данные будут утеряны. Действительно перейти?' } %>
 
 <% end %>
