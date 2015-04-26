@@ -1,15 +1,1 @@
-<% url_helper = Rails.application.routes.url_helpers %>
-
-var ckeditor_init = function() {
-  CKEDITOR.replace('page_content', {
-    extraPlugins: 'uploadimage,image2,embed',
-    uploadUrl: ckpages_uploads_path,
-    height: '400'
-  });
-}
-
-var ckeditor_load = function() {
-  ckeditor_init();
-};
-
-$(document).on("ready page:load", ckeditor_load);
+$(document).on("ready page:load", ckeditor_replace);

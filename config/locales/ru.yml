@@ -9,6 +9,16 @@ ru:
         path: Путь
         redirect_url: Переадресация
         content: Содержание
+        title1: Путь №1
+        url1: Адрес №1
+        title2: Путь №2
+        url2: Адрес №2
+        title3: Путь №3
+        url3: Адрес №3
+        title4: Путь №4
+        url4: Адрес №4
+        title5: Путь №5
+        url5: Адрес №5
   simple_form:
     hints:
       page:

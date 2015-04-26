@@ -2,6 +2,13 @@
 
   <%= f.error_notification %>
 
+  <%= f.input :title, as: :string %>
+  <%= f.input :path, as: :string %>
+  <%= f.input :redirect_url, as: :string %>
+  <%= f.input :keywords, as: :string %>
+  <%= f.input :description, as: :string %>
+  <%= f.input :robots, as: :string %>
+
   <%= f.input :title1, as: :string %>
   <%= f.input :url1, as: :string %>
 
@@ -17,12 +24,6 @@
   <%= f.input :title5, as: :string %>
   <%= f.input :url5, as: :string %>
 
-  <%= f.input :path, as: :string %>
-  <%= f.input :keywords, as: :string %>
-  <%= f.input :description, as: :string %>
-  <%= f.input :title, as: :string %>
-  <%= f.input :robots, as: :string %>
-  <%= f.input :redirect_url, as: :string %>
   <%= f.input :content %>
 
   <%= f.button :submit, class: 'btn btn-danger btn-lg' %>
