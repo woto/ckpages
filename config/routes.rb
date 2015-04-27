@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "*path", controller: 'ckpages/public', action: :show, constraints: Constraint.new, format: false
 
   if Ckpages.suppress_exceptions
-    get "*error", :to => "ckpages/public404", action: :show, format: false
+    get "*error", controller: "ckpages/public404", action: :show, format: false
   end
 
 end

@@ -6,7 +6,7 @@ module Ckpages
 
     # GET /pages
     def index
-      @pages = Page.page(params[:page]).order(id: :desc)
+      @pages = Page.order(id: :desc).page(params[:page])
     end
 
     # GET /pages/1
