@@ -6,4 +6,6 @@ require "simple_form"
 
 module Ckpages
   mattr_accessor :suppress_exceptions
+  mattr_accessor :name
+  mattr_accessor :password
 end
