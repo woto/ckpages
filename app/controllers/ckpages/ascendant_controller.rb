@@ -1,7 +1,7 @@
 require_dependency "ckpages/application_controller"
 
 module Ckpages
-  class PublicController < ::ApplicationController
+  class AscendantController < ::ApplicationController
     before_action :set_page, only: [:show]
 
     def show
