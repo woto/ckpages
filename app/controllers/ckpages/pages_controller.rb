@@ -15,7 +15,7 @@ module Ckpages
 
     # GET /pages/new
     def new
-      @page = Page.new
+      @page = Page.new(path: '/')
 
       if params[:path].present?
         @page.path = CGI::unescape(params[:path])

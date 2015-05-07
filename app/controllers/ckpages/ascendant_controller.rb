@@ -13,7 +13,6 @@ module Ckpages
     private
       def set_page
         path = request.original_fullpath
-        path[0] = ''
         @page = Page.where(:path => CGI::unescape(path)).first
       end
   end

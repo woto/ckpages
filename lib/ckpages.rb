@@ -4,6 +4,7 @@ require "turbolinks"
 require "bootstrap-sass"
 require "simple_form"
 require "kaminari"
+require "carrierwave"
 
 module Ckpages
   mattr_accessor :suppress_exceptions

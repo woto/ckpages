@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <div class="page-header">
   <h1>Список страниц</h1>
 </div>
+
+<div class="alert alert-info" role="alert"><%= notice %></div>
 
 <%= paginate @pages %>
 
@@ -30,7 +30,7 @@
           <%= dt_dd(page, "updated_at", lambda{|val| l(val)}) %>
         </dl>
         <div class="text-center">
-        <%= link_to 'Просмотр', '/' + page.path, class: 'btn btn-primary', target: "_blank" %>&nbsp;&nbsp;
+        <%= link_to 'Просмотр', page.path, class: 'btn btn-primary' %>&nbsp;&nbsp;
         <%= link_to 'Служебный просмотр', page, class: 'btn btn-primary' %>&nbsp;&nbsp;
         <%= link_to 'Редактировать', edit_page_path(page), class: 'btn btn-primary' %>&nbsp;&nbsp;
         <%= link_to 'Удалить', page, method: :delete, data: { confirm: 'Действительно хотите удалить страницу?' }, class: 'btn btn-danger' %>

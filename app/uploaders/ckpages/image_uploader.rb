@@ -1,7 +1,5 @@
-# encoding: utf-8
-
 module Ckpages
-  class ImageUploader < CarrierWave::Uploader::Base
+  class ImageUploader < ::CarrierWave::Uploader::Base
 
     # Include RMagick or MiniMagick support:
     # include CarrierWave::RMagick

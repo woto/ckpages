@@ -22,3 +22,9 @@
 .bottom-space-sm {
   margin-bottom: 10px;
 }
+
+.alert:empty {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
