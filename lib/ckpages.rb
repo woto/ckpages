@@ -8,6 +8,4 @@ require "carrierwave"
 
 module Ckpages
   mattr_accessor :enabled
-  mattr_accessor :login
-  mattr_accessor :password
 end
