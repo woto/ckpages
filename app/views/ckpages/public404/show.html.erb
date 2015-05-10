@@ -1,11 +1,19 @@
 <br>
 
 <pre>
-  Create app/views/ckpages/public404/show.html.erb in your application.
+Create app/views/ckpages/public404/show.html.erb in your application.
 </pre>
 
+<hr>
+
+<h4> Content of params </h4>
+
+<%= debug params %>
+
+<hr>
+
 <pre>
-  link_to 'new page', ckpages.new_page_path(path: "/#{params[:path]}") 
+link_to 'new page', ckpages.new_page_path(path: "/#{params[:path]}") 
 </pre>
 
 <%= link_to 'new page', new_page_path(path: "/#{params[:path]}") %>

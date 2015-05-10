@@ -1,11 +1,19 @@
 <br>
 
 <pre>
-  Create app/views/ckpages/public/show.html.erb in your application.
+Create app/views/ckpages/public/show.html.erb in your application.
 </pre>
 
+<hr>
+
+<h4> Content of @page </h4>
+
+<%= debug @page %>
+
+<hr>
+
 <pre>
-  link_to 'edit page', edit_page_path(@page)
+link_to 'edit page', edit_page_path(@page)
 </pre>
 
 <%= link_to 'edit page', edit_page_path(@page) %>
