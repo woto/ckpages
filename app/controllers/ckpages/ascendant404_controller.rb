@@ -1,7 +1,7 @@
 require_dependency "ckpages/application_controller"
 
 module Ckpages
-  class Public404Controller < ::ApplicationController
+  class Ascendant404Controller < ::ApplicationController
     def show
     end
   end

@@ -1,5 +1,5 @@
 first:
-  path: 1/1
+  path: /1/1
   content: content
   keywords: keywords
   description: description
@@ -9,13 +9,13 @@ first:
   updated_at: <%= Time.zone.today %>
 
 second:
-  path: 2/2
+  path: /2/2
   redirect_url: http://ya.ru
   created_at: <%= Time.zone.today %>
   updated_at: <%= Time.zone.today %>
 
 third:
-  path: 3/3
+  path: /3/3
   redirect_url: /4/4
   created_at: <%= Time.zone.today %>
   updated_at: <%= Time.zone.today %>

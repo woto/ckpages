@@ -1,3 +1,11 @@
+<br>
+
 <pre>
   Create app/views/ckpages/public404/show.html.erb in your application.
 </pre>
+
+<pre>
+  link_to 'new page', ckpages.new_page_path(path: "/#{params[:path]}") 
+</pre>
+
+<%= link_to 'new page', new_page_path(path: "/#{params[:path]}") %>

@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
-  #get "*path", controller: 'ckpages/public', action: :show
 
-  #if Ckpages.suppress_exceptions
-  #  get "*error", controller: "ckpages/public404", action: :show, format: false
-  #end
+  class Constraint
+    def matches?(request)
+      path = request.original_fullpath.clone
+      @page = Ckpages::Page.where(:path => CGI::unescape(path))
+      @page.present?
+    end
+  end
+
+  get "*path", controller: 'ckpages/public', action: :show, constraints: Constraint.new, format: false
+
+  if Ckpages.suppress_exceptions
+    get "*path", controller: "ckpages/public404", action: :show, format: false
+  end
 
 end
 

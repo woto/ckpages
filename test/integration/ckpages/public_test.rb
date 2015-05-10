@@ -4,10 +4,6 @@ module Ckpages
 class PublicTest < ActionDispatch::IntegrationTest
   fixtures :all
 
-  # test "the truth" do
-  #   assert true
-  # end
-
   test 'Проверка тестовой страницы' do
     get '/1/1'
     assert assigns(:page)
