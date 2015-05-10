@@ -8,10 +8,11 @@ Rails.application.routes.draw do
     end
   end
 
-  get "*path", controller: 'ckpages/public', action: :show, constraints: Constraint.new, format: false
-
-  if Ckpages.suppress_exceptions
+  if Ckpages.enabled
+    get "*path", controller: 'ckpages/public', action: :show, constraints: Constraint.new, format: false
     get "*path", controller: "ckpages/public404", action: :show, format: false
+    root 'ckpages/public#show', constraints: Constraint.new, format: false
+    root 'ckpages/public404#show', as: 'root404', format: false
   end
 
 end

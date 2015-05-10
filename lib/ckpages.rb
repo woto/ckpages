@@ -7,7 +7,7 @@ require "kaminari"
 require "carrierwave"
 
 module Ckpages
-  mattr_accessor :suppress_exceptions
+  mattr_accessor :enabled
   mattr_accessor :login
   mattr_accessor :password
 end
