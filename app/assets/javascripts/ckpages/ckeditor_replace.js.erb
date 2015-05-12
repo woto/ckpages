@@ -1,0 +1,10 @@
+var ckeditor_replace = function() {
+  CKEDITOR.plugins.addExternal( 'placeholder', '/placeholder/', 'plugin.js' );
+  CKEDITOR.replace('page_content', {
+    extraPlugins: 'uploadimage,image2,embed,placeholder',
+    uploadUrl: ckpages_uploads_path,
+    height: '400',
+    allowedContent: true,
+    contentsCss: '<%= stylesheet_path 'application' %>'
+  });
+}

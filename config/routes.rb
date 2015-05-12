@@ -20,4 +20,5 @@ end
 Ckpages::Engine.routes.draw do
   resources :uploads
   resources :pages
+  resources :parts
 end

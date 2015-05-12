@@ -1,0 +1,44 @@
+<div class="page-header">
+  <h1>Список частей</h1>
+</div>
+
+<div class="alert alert-info" role="alert"><%= notice %></div>
+
+<%= paginate @parts %>
+
+<div style="margin-top:20px"></div>
+
+<div class="row">
+  <div class="col-md-9">
+    <% @parts.each do |part| %>
+      <div class="well">
+      <div>
+        <dl class="dl-horizontal">
+          <%= dt_dd(part, "id") %>
+          <%= dt_dd(part, "title") %>
+          <%= dt_dd(part, "text") %>
+          <%= dt_dd(part, "created_at", lambda{|val| l(val)}) %>
+          <%= dt_dd(part, "updated_at", lambda{|val| l(val)}) %>
+        </dl>
+        <div class="text-center">
+        <%= link_to 'Служебный просмотр', part, class: 'btn btn-primary' %>&nbsp;&nbsp;
+        <%= link_to 'Редактировать', edit_part_path(part), class: 'btn btn-primary' %>&nbsp;&nbsp;
+        <%= link_to 'Удалить', part, method: :delete, data: { confirm: 'Действительно хотите удалить страницу?' }, class: 'btn btn-danger' %>
+        </div>
+      </div>
+      </div>
+    <% end %>
+    <%= paginate @parts %>
+  </div>
+  <div class="col-md-3">
+    <div class="well">
+      Тут будут фильтры
+    </div>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'Новая часть', new_part_path, class: 'btn btn-primary btn-lg' %>
+
+<%= paginate @parts %>
