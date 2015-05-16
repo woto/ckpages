@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20150511111424) do
     t.text     "redirect_url"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.text     "breadcrumb"
     t.text     "title1"
     t.text     "url1"
     t.text     "title2"

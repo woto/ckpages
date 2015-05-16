@@ -24,6 +24,13 @@ class PublicTest < ActionDispatch::IntegrationTest
   test 'Провека не существующей страницы' do
     get '/not_exists.html'
     assert_template 'ckpages/public404/show'
+    assert_response :missing
+  end
+
+  test 'У класса Ckpages::Public404Controller не должно быть метода show, иначе мы не сможем быть точно уверены, что из родительского класса был добавлен 404 код. Например завели show метод и в нём вызвали "render :status => 404"' do
+    assert_raises NameError do
+      Ckpages::Public404Controller.instance_method(:show)
+    end
   end
 
 end
