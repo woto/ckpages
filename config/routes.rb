@@ -21,6 +21,7 @@ end
 
 Ckpages::Engine.routes.draw do
   resources :uploads
+  resources :plugin_uploads
   resources :pages
   resources :parts
 end

@@ -1,5 +1,5 @@
 module Ckpages
-  class ImageUploader < ::CarrierWave::Uploader::Base
+  class ApplicationUploader < ::CarrierWave::Uploader::Base
 
     # Include RMagick or MiniMagick support:
     # include CarrierWave::RMagick

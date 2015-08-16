@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511111424) do
+ActiveRecord::Schema.define(version: 20150816190242) do
 
   create_table "ckpages_pages", force: :cascade do |t|
     t.text     "path"
@@ -40,6 +40,14 @@ ActiveRecord::Schema.define(version: 20150511111424) do
     t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "ckpages_plugin_uploads", force: :cascade do |t|
+    t.string   "content_type"
+    t.integer  "file_size"
+    t.string   "upload"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "ckpages_uploads", force: :cascade do |t|

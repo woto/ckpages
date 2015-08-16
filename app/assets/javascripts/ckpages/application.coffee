@@ -6,3 +6,4 @@
 //= require ./ckeditor_replace
 //= require ./ckeditor_init
 //= require ./pages
+//= require ./plugin_uploads

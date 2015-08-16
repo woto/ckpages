@@ -2,6 +2,15 @@ require_dependency "ckpages/application_controller"
 
 module Ckpages
   class UploadsController < ApplicationController
+
+    def index
+      @uploads = Upload.page(params[:page])
+    end
+
+    def show
+      @upload = Upload.find(params[:id])
+    end
+
     # POST /uploads
     def create
       @upload = Upload.new(upload_params)
@@ -11,7 +20,7 @@ module Ckpages
 
       respond_to do |format|
         format.json {
-          render plain: {fileName: @upload.image.filename, uploaded: 1, url: @upload.image.url}.to_json
+          render plain: {fileName: @upload.file.filename, uploaded: 1, url: @upload.file.url}.to_json
         } 
       end
     end
@@ -19,14 +28,14 @@ module Ckpages
     private
       def upload_params
         hack_params
-        params.require(:upload).permit(:image)
+        params.require(:upload).permit(:file)
       end
 
       # hack parameter (maybe better to change ckeditor 
       # post params according Rails convention)
       def hack_params
-        image = params[:upload].clone
-        params[:upload] = {image: image}
+        file = params[:upload].clone
+        params[:upload] = {file: file}
       end
   end
 end

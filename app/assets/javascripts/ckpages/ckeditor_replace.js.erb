@@ -1,11 +1,15 @@
 var ckeditor_replace = function() {
-  CKEDITOR.plugins.addExternal( 'placeholder', '/placeholder/', 'plugin.js' );
-  CKEDITOR.replace('page_content', {
-    extraPlugins: 'uploadimage,image2,embed,placeholder',
-    uploadUrl: ckpages_uploads_path,
-    height: '400',
-    allowedContent: true,
-    contentsCss: '<%= stylesheet_path 'application' %>',
-    language: 'ru'
-  });
+  if ($('#page_content').length > 0) {
+    CKEDITOR.plugins.addExternal( 'placeholder', '/placeholder/', 'plugin.js' );
+    CKEDITOR.plugins.addExternal( 'codemirror', '/codemirror/', 'plugin.js' );
+    CKEDITOR.plugins.addExternal( 'pluginupload', '/pluginupload/', 'plugin.js' );
+    CKEDITOR.replace('page_content', {
+      extraPlugins: 'uploadimage,image2,embed,placeholder,codemirror,pluginupload',
+      uploadUrl: ckpages_uploads_path,
+      height: '400',
+      allowedContent: true,
+      contentsCss: '<%= stylesheet_path 'application' %>',
+      language: 'ru'
+    });
+  }
 }

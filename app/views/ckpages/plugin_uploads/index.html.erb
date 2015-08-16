@@ -1,0 +1,23 @@
+<div style="margin-top: 20px">
+  <% if @plugin_upload.persisted? %>
+    <a id="insert_files_into_ckeditor" class="btn btn-primary" style="margin-bottom: 20px">Вставить</a>
+
+    <% if @plugin_upload.file.content_type.starts_with? 'image' %>
+      <div id="file" class="img-responsive">
+        <%= image_tag @plugin_upload.file.url %>
+      </div>
+    <% else %>
+      <div id="file">
+        <%= link_to @plugin_upload.file.filename, @plugin_upload.file.url %>
+      </div>
+    <% end %>
+
+    <div id="ckeditor-name" class="hide"><%= params['CKEditor'] %></div>
+  <% else %>
+    <%= simple_form_for(@plugin_upload, url: ckpages.plugin_uploads_path(@plugin_upload, 'CKEditor' => params['CKEditor'])) do |f| %>
+      <%= f.input :file, label: 'Выберите файл' %>
+      <%= f.input :remote_file_url, label: 'Или укажите ссылку на файл' %>
+      <%= f.button :submit, 'Загрузить', class: 'btn btn-primary' %>
+    <% end %>
+  <% end %>
+</div>
