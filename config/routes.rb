@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
 
   if Ckpages.enabled
+    scope module: :ckpages do
+      resources :plugin_uploads
+    end
     get "*path" => 'ckpages/public#show', constraints: Constraint.new, format: false
     get "*path" => "ckpages/public404#show", format: false
     if Ckpages.root
@@ -21,7 +24,6 @@ end
 
 Ckpages::Engine.routes.draw do
   resources :uploads
-  resources :plugin_uploads
   resources :pages
   resources :parts
 end

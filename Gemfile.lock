@@ -6,7 +6,7 @@ PATH
       carrierwave
       jquery-rails
       kaminari
-      rails (~> 4.2.1)
+      rails (~> 4.2)
       ransack
       simple_form
       turbolinks

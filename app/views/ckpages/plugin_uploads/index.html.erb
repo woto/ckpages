@@ -14,7 +14,7 @@
 
     <div id="ckeditor-name" class="hide"><%= params['CKEditor'] %></div>
   <% else %>
-    <%= simple_form_for(@plugin_upload, url: ckpages.plugin_uploads_path(@plugin_upload, 'CKEditor' => params['CKEditor'])) do |f| %>
+    <%= simple_form_for(@plugin_upload, url: main_app.plugin_uploads_path(@plugin_upload, 'CKEditor' => params['CKEditor'])) do |f| %>
       <%= f.input :file, label: 'Выберите файл' %>
       <%= f.input :remote_file_url, label: 'Или укажите ссылку на файл' %>
       <%= f.button :submit, 'Загрузить', class: 'btn btn-primary' %>

@@ -2,6 +2,8 @@ require_dependency "ckpages/application_controller"
 
 module Ckpages
   class PluginUploadsController < ApplicationController
+    layout 'ckpages/application'
+
     def index
       @plugin_upload = Upload.new
     end
