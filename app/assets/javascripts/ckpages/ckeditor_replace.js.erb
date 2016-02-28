@@ -3,8 +3,9 @@ var ckeditor_replace = function() {
     CKEDITOR.plugins.addExternal( 'placeholder', '/placeholder/', 'plugin.js' );
     CKEDITOR.plugins.addExternal( 'codemirror', '/codemirror/', 'plugin.js' );
     CKEDITOR.plugins.addExternal( 'pluginupload', '/pluginupload/', 'plugin.js' );
+    CKEDITOR.plugins.addExternal( 'pluginajaxsave', '/pluginajaxsave/', 'plugin.js' );
     CKEDITOR.replace('page_content', {
-      extraPlugins: 'uploadimage,image2,embed,placeholder,codemirror,pluginupload',
+      extraPlugins: 'uploadimage,image2,embed,placeholder,codemirror,pluginupload,pluginajaxsave',
       uploadUrl: ckpages_uploads_path,
       height: '400',
       allowedContent: true,
